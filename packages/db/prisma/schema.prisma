@@ -1,0 +1,32 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model User {
+  id        String   @id @default(cuid())
+  email     String   @unique
+  createdAt DateTime @default(now())
+  games     Game[]   @relation("GamePlayers")
+}
+
+model Game {
+  id        String   @id @default(cuid())
+  players   User[]   @relation("GamePlayers")
+  moves     Move[]
+  status    String   @default("active")
+  createdAt DateTime @default(now())
+}
+
+model Move {
+  id        String   @id @default(cuid())
+  game      Game     @relation(fields: [gameId], references: [id])
+  gameId    String
+  from      String
+  to        String
+  san       String
+  createdAt DateTime @default(now())
+}
