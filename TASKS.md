@@ -1,11 +1,4 @@
-# Chess App (Pion) — Task List
-
-How to use this file:
-- Check items off by changing `[ ]` to `[x]` as they're completed (renders as checkboxes on GitHub).
-- Work roughly top to bottom within each tier; items in the same tier are not strictly ordered unless a note says otherwise.
-- Feel free to add sub-tasks under any item as it gets broken down during implementation.
-
----
+# Pion Task list
 
 ## P0 — Core MVP (a working game between two people)
 
